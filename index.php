@@ -51,7 +51,7 @@ session_start();
 
 			case '1':
 			//Registro
-			include('controladores/controlador. .php');
+			include('controladores/controlador.formularioPrueba.php');
 			break;
 
 			case '2':
@@ -108,7 +108,7 @@ elseif(isset($_GET['page'])){
 
 		case '1':
 		//
-		include('vistas/modulos/.php');
+		include('vistas/modulos/formularioPrueba.php');
 		break;
 
 		case '2':
