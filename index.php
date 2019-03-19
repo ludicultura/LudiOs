@@ -51,32 +51,32 @@ session_start();
 
 			case '1':
 			//Registro
-			include('controladores/controlador.docker.php');
+			include('controladores/controlador. .php');
 			break;
 
 			case '2':
 			//Perfil
-			include('controladores/controlador.ventanaCalendario.php');
+			include('controladores/controlador. .php');
 			break;
 
 			case '3':
 			//Nueva publicación
-			include('controladores/controlador.ventanaContacto.php');
+			include('controladores/controlador. .php');
 			break;
 
 			case '4':
 			//Publicación
-			include('controladores/controlador.ventanaInfo.php');
+			include('controladores/controlador. .php');
 			break;
 
 			case '5':
 			//Buscador
-			include('controladores/controlador.ventanaMapa.php');
+			include('controladores/controlador. .php');
 			break;
 
 			case '6':
 			//Panel de publicaciones
-			include('controladores/controlador.ventanaMision.php');
+			include('controladores/controlador. .php');
 			break;
 
 			case 'default':
