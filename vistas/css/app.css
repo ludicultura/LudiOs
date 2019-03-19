@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,600,700|Roboto:300,400");
+@import url("https://fonts.googleapis.com/css?family=Zilla+Slab:300,400,600,700");
+.formularioLogin {
+  width: 500px; }
+
+.contenedorFormulario {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh; }
+
+/*# sourceMappingURL=app.css.map */
