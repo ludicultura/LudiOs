@@ -95,8 +95,6 @@ session_start();
 
 <body>
     <?php
-	//modulo de login
-include('vistas/modulos/login.php');
 
 if(isset($_GET['id'])){
 	
@@ -107,7 +105,7 @@ elseif(isset($_GET['page'])){
 	switch($_GET['page']){
 
 		case '1':
-		//
+		//formulario de pueba
 		include('vistas/modulos/formularioPrueba.php');
 		break;
 
@@ -139,7 +137,10 @@ elseif(isset($_GET['page'])){
 
 	}
 }
+else{
+	include('vistas/modulos/login.php');
 
+}
 
 ?>
 
