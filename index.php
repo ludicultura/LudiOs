@@ -51,7 +51,7 @@ session_start();
 
 			case '1':
 			//Registro
-			include('controladores/controlador.formularioPrueba.php');
+			include('controladores/controlador.dashboard.php');
 			break;
 
 			case '2':
@@ -105,33 +105,43 @@ elseif(isset($_GET['page'])){
 	switch($_GET['page']){
 
 		case '1':
-		//formulario de pueba
-		include('vistas/modulos/formularioPrueba.php');
+		//vista del dashboard
+		include('vistas/modulos/dashboard.php');
 		break;
 
 		case '2':
-		//
-		include('vistas/modulos/.php');
+		//vista del calendario
+		include('vistas/modulos/calendario.php');
 		break;
 
 		case '3':
-		// 
-		include('vistas/modulos/.php');
+		//vista de las bitacoras
+		include('vistas/modulos/bitacoras.php');
 		break;
 
 		case '4':
-		//
-		include('vistas/modulos/.php');
+		//vista de evaluaciones
+		include('vistas/modulos/evaluaciones.php');
 		break;
 
 		case '5':
-		//B
-		include('vistas/modulos/.php');
+		//vista de documentos
+		include('vistas/modulos/documentos.php');
 		break;
 
 		case '6':
-		//
-		include('vistas/modulos/.php');
+		//vista de informacion
+		include('vistas/modulos/informacion.php');
+		break;
+
+		case '7':
+		//vista de administrar
+		include('vistas/modulos/administrar.php');
+		break;
+
+		case '8':
+		//vista de configuracion
+		include('vistas/modulos/configuracion.php');
 		break;
 
 
@@ -139,8 +149,12 @@ elseif(isset($_GET['page'])){
 }
 else{
 	include('vistas/modulos/login.php');
+	
 
 }
+
+include('vistas/modulos/navbar.php');
+include('vistas/modulos/nav.php');
 
 ?>
 
