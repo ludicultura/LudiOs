@@ -87,6 +87,7 @@ session_start();
 	}
 	else{
 		//Aquí se incluyen todos los controladores del index.
+		include("modelos/modelo.login.php");
 		include('controladores/controlador.login.php');
 	}
 
