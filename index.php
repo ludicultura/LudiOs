@@ -8,8 +8,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<?php 
 	
-<<<<<<< HEAD
 	if(isset($_GET['id'])){
 		
 	}
@@ -50,40 +50,19 @@
 			break;
 
 			case 'default':
-=======
-	<!-- Frameworks CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
-    <?php
-		//Los controladores que se utilizan en todas las páginas, se incluyen fuera del if de abajo.
-		if(isset($_GET['id'])) {
->>>>>>> d5aa60a7ad233d10153edc1f83a60e8ba6c864b5
 			
 		}
-<<<<<<< HEAD
 	}
 	else{
 		//Aquí se incluyen todos los controladores del index.
 		include("modelos/modelo.login.php");
 		include('controladores/controlador.login.php');
 	}
-=======
-		elseif(isset($_GET['page'])) {
-			switch($_GET['page']){
-				case '1':	//Controlador del login
-					include("controladores/controlador.login.php");
-					break;
-			}
-		} else {
->>>>>>> d5aa60a7ad233d10153edc1f83a60e8ba6c864b5
 
-		}
 	?>
 </head>
 <body>
     <?php
-<<<<<<< HEAD
 
 if(isset($_GET['id'])){
 	
@@ -141,25 +120,10 @@ else{
 	
 
 }
-
 include('vistas/modulos/navbar.php');
 include('vistas/modulos/nav.php');
 
 ?>
-=======
-		if(isset($_GET['id'])) {
-			
-		} else if(isset($_GET['page'])) {
-			switch($_GET['page']) {
-				case '1':	//Login
-					include('vistas/modulos/login.php');
-					break;					
-			}
-		} else {	//Modulo principal de la aplicacion
-			include('vistas/modulos/main.php');		
-		}
-	 ?>
->>>>>>> d5aa60a7ad233d10153edc1f83a60e8ba6c864b5
 
 	<!-- Frameworks JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

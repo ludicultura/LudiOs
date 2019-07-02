@@ -1,4 +1,5 @@
 <?php
+    $error = "";
     if(isset($_POST["loginEmail"]) && isset($_POST["loginPassword"])) { //Verifica si el username y el password fueron ingresados
         //Conectar a la base de datos
         $conexion = new mysqli("localhost", "root", "Bambucha_24", "ludibd");
@@ -39,6 +40,6 @@
             $error = "username ó password incorrecto";  //Error
 
         $QUsuario->free();
+        $conexion->close();
     }
-    $conexion->close();
  ?>
