@@ -1,45 +1,15 @@
 <?php
-session_start();
-?>
+	session_start();
+ ?>
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="utf-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <meta name="title" content="">
-
-    <meta name="description" content="">
-
-    <meta name="keyword" content="">
-
-    <title>Ludi Os</title>
-    <link rel="icon" type="image/png" id="dinamico" href="vistas/img/elfavicon/favnar.png" />
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-    <link href="vistas/css/app.css" media="all" rel="stylesheet" type="text/css" />
-
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/interactjs@1.3.4/dist/interact.min.js"></script>
-    <script src="vistas/js/jquery.nicescroll.min.js"></script>
-
-
-
-    <?php
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	
-	//Los controladores que se utilizan en todas las páginas, se incluyen fuera del if de abajo.
-	
+<<<<<<< HEAD
 	if(isset($_GET['id'])){
 		
 	}
@@ -80,22 +50,40 @@ session_start();
 			break;
 
 			case 'default':
-			
-			break;
+=======
+	<!-- Frameworks CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
+    <?php
+		//Los controladores que se utilizan en todas las páginas, se incluyen fuera del if de abajo.
+		if(isset($_GET['id'])) {
+>>>>>>> d5aa60a7ad233d10153edc1f83a60e8ba6c864b5
+			
 		}
+<<<<<<< HEAD
 	}
 	else{
 		//Aquí se incluyen todos los controladores del index.
 		include("modelos/modelo.login.php");
 		include('controladores/controlador.login.php');
 	}
+=======
+		elseif(isset($_GET['page'])) {
+			switch($_GET['page']){
+				case '1':	//Controlador del login
+					include("controladores/controlador.login.php");
+					break;
+			}
+		} else {
+>>>>>>> d5aa60a7ad233d10153edc1f83a60e8ba6c864b5
 
+		}
 	?>
 </head>
-
 <body>
     <?php
+<<<<<<< HEAD
 
 if(isset($_GET['id'])){
 	
@@ -158,7 +146,24 @@ include('vistas/modulos/navbar.php');
 include('vistas/modulos/nav.php');
 
 ?>
+=======
+		if(isset($_GET['id'])) {
+			
+		} else if(isset($_GET['page'])) {
+			switch($_GET['page']) {
+				case '1':	//Login
+					include('vistas/modulos/login.php');
+					break;					
+			}
+		} else {	//Modulo principal de la aplicacion
+			include('vistas/modulos/main.php');		
+		}
+	 ?>
+>>>>>>> d5aa60a7ad233d10153edc1f83a60e8ba6c864b5
 
+	<!-- Frameworks JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
-
 </html>
