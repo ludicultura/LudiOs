@@ -1,3 +1,6 @@
 <div class="contenedorCalendario">
-  <h1>Calendario</h1>
+  <div class="divCalendario" >
+    <div id="calendar"></div>
+  
+  </div>
 </div>

@@ -1,15 +1,11 @@
 <div class="contenedorDashboard">
-<div class="card" >
-  <img class="card-img-top imgPerfil" src="vistas/img/foto.svg" alt="Card image cap" id="imgPerfil">
-  <div class="card-body">
-    <h5 class="card-title" id="nombreLudi">Roberto</h5>
-    <p class="card-text">Ing. Sistemas Computacionales</p>
-    <p class="card-text">Consejo - Jefe Proyecto</p>
-    <p class="card-text">Bits y Átomos</p>
-
-    <button class="btn-primary" onclick="cambiarDatos()">Cambiar datos</button> 
-
-    
+  <div class="card border-primary">
+    <h1 class="card-title bg-primary text-white pl-5 pr-5" id="idDashboardNombre">Nombre</h1>
+    <div class="card-body text-justify d-flex flex-column">
+      <div class="text-center"><img src="vistas/img/foto.svg" style="width: 100px;"></div>
+      <p id="idDashboardTipo"><b>Tipo: </b></p>
+      <p id="idDashboardComision"><b>Comisión: </b></p>
+      <p id="idDashboardCarrera"><b>Carrera: </b></p>
+    </div>
   </div>
-</div>
 </div>
