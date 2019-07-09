@@ -1,5 +1,6 @@
 <div class="contenedorCalendario">
-  <div id="calendar">
+  <div class="divCalendario" >
+    <div id="calendar"></div>
   
   </div>
 </div>
