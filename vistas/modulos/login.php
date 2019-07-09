@@ -16,5 +16,5 @@
     <button type="submit" class="btn btn-primary">Submit</button>
     <a href="?page=1" class="btn btn-primary">ir a Formulario</a>
   </form>
-  <script> displayError("<?php echo $error; ?>") </script>
+  <script> displayError("<?php echo $error; ?>"); </script>
 </div>

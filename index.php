@@ -29,6 +29,15 @@
     <script src="https://cdn.jsdelivr.net/npm/interactjs@1.3.4/dist/interact.min.js"></script>
     <script src="vistas/js/jquery.nicescroll.min.js"></script>
 
+	<!-- fullcalendar -->
+	<link href='vistas/css/fullcalendar/core/main.min.css' rel='stylesheet' />
+	<link href='vistas/css/fullcalendar/daygrid/main.min.css' rel='stylesheet' />
+	<link href='vistas/css/fullcalendar/timegrid/main.min.css' rel='stylesheet' />
+
+    <script src='vistas/js/fullcalendar/core/main.min.js'></script>
+	<script src='vistas/js/fullcalendar/daygrid/main.min.js'></script>
+	<script src='vistas/js/fullcalendar/timegrid/main.min.js'></script>
+	
     <?php	
 		//Los controladores que se utilizan en todas las páginas, se incluyen fuera del if de abajo.
 		if(isset($_GET['id'])){
@@ -41,14 +50,14 @@
 			switch($_GET['page']){
 
 				case '1':
-				//Registro
+				//Dashboard
 				include('modelos/modelo.dashboard.php');
 				include('controladores/controlador.dashboard.php');
 				break;
 
 				case '2':
-				//Perfil
-				include('controladores/controlador. .php');
+				//Calendario
+				include('controladores/controlador.calendario.php');
 				break;
 
 				case '3':
