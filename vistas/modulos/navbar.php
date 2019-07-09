@@ -6,7 +6,7 @@
   <img src="vistas/img/foto.svg"  height="50" class="d-inline-block align-top" alt="">
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Cerrar Sesión</a>
+    <a class="dropdown-item" href="?cerrar=1">Cerrar Sesión</a>
     
   </div>
 </div>

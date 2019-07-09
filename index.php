@@ -1,6 +1,6 @@
 <?php
-session_start();
-?>
+	session_start();
+ ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -51,6 +51,7 @@ session_start();
 
 			case '1':
 			//Registro
+			include('modelos/modelo.dashboard.php');
 			include('controladores/controlador.dashboard.php');
 			break;
 
@@ -87,9 +88,11 @@ session_start();
 	}
 	else{
 		//Aquí se incluyen todos los controladores del index.
+		include('modelos/modelo.login.php');
 		include('controladores/controlador.login.php');
 	}
 
+	include('modelos/modelo.navbar.php');
 	?>
 </head>
 
@@ -149,8 +152,6 @@ elseif(isset($_GET['page'])){
 }
 else{
 	include('vistas/modulos/login.php');
-	
-
 }
 
 include('vistas/modulos/navbar.php');
