@@ -80,6 +80,12 @@
 				include('controladores/controlador. .php');
 				break;
 
+				case '7':
+				//Administrar
+				include('modelos/modelo.administrar.php');
+				include('controladores/controlador.administrar.php');
+				break;
+
 				case 'default':
 				
 				break;

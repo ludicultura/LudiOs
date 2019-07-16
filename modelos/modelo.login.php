@@ -2,7 +2,8 @@
     $error = "";
     if(isset($_POST["loginEmail"]) && isset($_POST["loginPassword"])) { //Verifica si el username y el password fueron ingresados
         //Conectar a la base de datos
-        $conexion = new mysqli("opalo.studio", "opalostu_user", ".Pinshicontra", "opalostu_LudiOs");
+        //$conexion = new mysqli("opalo.studio", "opalostu_user", ".Pinshicontra", "opalostu_LudiOs");
+        $conexion = new mysqli("localhost", "root", "Bambucha_24", "ludibd");
 
         //Verificar conexion
         if($conexion->connect_errno) {
@@ -15,12 +16,11 @@
         $password = $conexion->real_escape_string($_POST["loginPassword"]);
 
         //Verificar la cuenta de usuario
-        $QUsuario = $conexion->query("select persona.idPersona, persona.nombre, persona.nickname, persona.activo, carrera.nombre as carrera from persona, carrera where idPersona in (select idPersona  from usuario where username like \"$email\" and passwd like \"$password\" and carrera.idCarrera = persona.idCarrera);");
+        $QUsuario = $conexion->query("select persona.idPersona, persona.nombre, persona.nickname, persona.activo, carrera.nombre as carrera from persona, carrera where idPersona in (select idPersona  from usuario where username like \"$email\" and passwd like md5(\"$password\") and carrera.idCarrera = persona.idCarrera);");
 
         if($RUsuario = $QUsuario->fetch_assoc()) {      //Si el usuario existe, se obtiene su informacion
             if($RUsuario["activo"] == true) {           //Verificamos si la persona esta activa en la organizacion
                 //Variables de sesion
-                session_start();
                 $_SESSION["sessionUsername"] = $email;                  
                 $_SESSION["sessionIdPersona"] = $RUsuario["idPersona"];    
                 $_SESSION["sessionNombre"] = $RUsuario["nombre"];
