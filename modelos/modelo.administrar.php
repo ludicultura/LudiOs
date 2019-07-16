@@ -1,7 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
-
     //Verificar si hay una sesion iniciada
     if(!isset($_SESSION["sessionNombre"]))
         header("Location: index.php");
@@ -48,4 +45,7 @@ ini_set('display_errors', '1');
     $QComision->close();
     $QCarrera->close();
     $conexion->close();
+
+    //Registrar un nuevo ludi
+    if(isset())
  ?>

@@ -18,6 +18,12 @@
       <div class="form-group input-group">
         <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-university"></i></span></div>
         <select class="form-control" id="registroCarrera">
+          <option>(Seleccionar universidad)</option>
+        </select>
+      </div>
+      <div class="form-group input-group">
+        <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-university"></i></span></div>
+        <select class="form-control" id="registroCarrera">
           <option>(Seleccionar carrera)</option>
         </select>
       </div>
