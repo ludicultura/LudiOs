@@ -15,16 +15,14 @@
         //Evento de si es Ludi o aspirante
         $("#registroEsLudi").change(function() {
             if(this.checked) {
-                $("#registroComision").prop("disabled", false);
-                $("#registroFuncion").prop("disabled", false);
-                $("#registroFecha").prop("disabled", false);
-                $("#registroPersonalidad").prop("disabled", false);
+                $(".divDatosLudi").css("display", "block");
+                
             } else {
-                $("#registroComision").prop("disabled", true);
-                $("#registroFuncion").prop("disabled", true);
-                $("#registroFecha").prop("disabled", true);
-                $("#registroPersonalidad").prop("disabled", true);
+                $(".divDatosLudi").css("display", "none");
+             
             }
         });
     });
+
+    
 </script>
