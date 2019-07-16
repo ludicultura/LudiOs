@@ -4,8 +4,8 @@
         header("Location: index.php");
 
     //Conectar con la base de datos
-    //$conexion = new mysqli("opalo.studio", "opalostu_user", ".Pinshicontra", "opalostu_LudiOs");
-    $conexion = new mysqli("localhost", "root", "Bambucha_24", "ludibd");
+    $conexion = new mysqli("opalo.studio", "opalostu_user", ".Pinshicontra", "opalostu_LudiOs");
+    //$conexion = new mysqli("localhost", "root", "Bambucha_24", "ludibd");
     
     //Verificar conexion
     if($conexion->connect_errno) {
