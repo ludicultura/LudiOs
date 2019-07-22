@@ -1,7 +1,23 @@
 <script>
     $(document).ready(function() {
-        nombre = "<?php echo $_SESSION["sessionNombre"]; ?>";
-        nombre = (nombre == "") ? "LudiOs": nombre;  //Verificar si hay una sesion iniciada
-        $("#navbarNombre").text(nombre);   //Mostrar el nombre del Ludi en la barra superior
+        $.ajax({
+            type: "POST",
+            url: "modelos/modelo.navbar.php",
+            data: "verificar=1",
+            success: function (response) {
+                $("#navbarNombre").text(response);
+            }
+        });
     });
+
+    var btnCerrar = function() {
+        $.ajax({
+            type: "POST",
+            url: "modelos/modelo.navbar.php",
+            data: "cerrar=1",
+            success: function (response) {
+                document.location = "index.php";
+            }
+        });
+    }
 </script>

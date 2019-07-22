@@ -51,7 +51,6 @@
 
 				case '1':
 				//Dashboard
-				include('modelos/modelo.dashboard.php');
 				include('controladores/controlador.dashboard.php');
 				break;
 
@@ -82,7 +81,6 @@
 
 				case '7':
 				//Administrar
-				include('modelos/modelo.administrar.php');
 				include('controladores/controlador.administrar.php');
 				break;
 
@@ -94,14 +92,10 @@
 		}
 		else{
 			//Aquí se incluyen todos los controladores del index.
-			include('modelos/modelo.login.php');
 			include('controladores/controlador.login.php');
 		}
 
-		include('modelos/modelo.navbar.php');
 		include('controladores/controlador.navbar.php');
-
-		include('modelos/modelo.nav.php');
 		include('controladores/controlador.nav.php');
 	?>
 </head>
@@ -111,7 +105,7 @@
 		if(isset($_GET['id'])) {
 
 		} elseif(isset($_GET['page'])) {
-			switch($_GET['page']){
+			switch($_GET['page']) {
 
 				case '1':
 				//vista del dashboard
