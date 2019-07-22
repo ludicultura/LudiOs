@@ -1,10 +1,20 @@
-<div class="contenedorPanel">
-  <div class="row">
-    <div class="col-3"></div>
+<div class="contenedorConfiguracion">
+<div class="row panelConfiguracion">
+<div class="col-3">
+<div class="card">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" class="btnConf" onclick="cambiarDiv(1)">Editar Perfil</li>
+    <li class="list-group-item" class="btnConf" onclick="cambiarDiv(2)">Cambiar contraseñas</li>
+    <li class="list-group-item" class="btnConf" onclick="cambiarDiv(3)">Notificaciones</li>
+  </ul>
+</div>
+
+</div>
     <div class="col-9">
-    <div class="contenedorAdministrar">
+    <div class="panelConfig">
   <div class="card border-primary">
-    <h1 class="card-title bg-primary text-white text-center">Registro</h1>
+    <h1 class="card-title bg-primary text-white text-center h1Registro" id="h1Registro">Editar Perfil</h1>
+    <div class="divEditar">
     <form class="card-body" method="post">
       <div class="mb-3"><b>Datos personales</b></div>
       <div class="form-group input-group">
@@ -41,15 +51,8 @@
           <option>10</option>
         </select>
       </div>
-      <div class="mb-3"><b>Datos de cuenta</b></div>
-      <div class="form-group input-group">
-        <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-envelope"></i></span></div>
-        <input type="text" name="" class="form-control" placeholder="Correo">
-      </div>
-      <div class="form-group input-group">
-        <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-lock"></i></span></div>
-        <input type="password" name="" class="form-control" placeholder="Password">
-      </div>
+      
+      
       <div class="mb-3"><b>Datos del Ludi</b></div>
       <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" id="registroEsLudi">
@@ -80,6 +83,23 @@
      </div>
      <button type="submit" class="btn btn-primary">Registrar</button>
     </form>  
+    </div>
+    <div class="divCambiar">
+    <form>
+      <div class="form-group input-group">
+      <label>Ingresa la nueva contraseña</label>
+          <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-lock"></i></span></div>
+          <input type="password" name="" class="form-control" placeholder="Password">
+        </div>
+        <div class="form-group input-group">
+        <label>Repite la nueva contraseña</label>
+          <div class="input-group-prepend"><span class="input-group-text"><i class="fas fa-lock"></i></span></div>
+          <input type="password" name="" class="form-control" placeholder="Password">
+        </div>
+    </form>
+    </div>
+    <div class="divNotificacion"></div>
+    
   </div>
 </div>
     </div>

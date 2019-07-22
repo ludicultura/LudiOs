@@ -115,4 +115,13 @@
 .list-group-flush {
   cursor: pointer; }
 
+.divEditar {
+  display: block; }
+
+.divCambiar {
+  display: none; }
+
+.divNotificacion {
+  display: none; }
+
 /*# sourceMappingURL=app.css.map */
