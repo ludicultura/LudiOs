@@ -1,14 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Lora:400,400i,600,700|Roboto:300,400");
 @import url("https://fonts.googleapis.com/css?family=Zilla+Slab:300,400,600,700");
 .formularioLogin {
-  width: 500px; }
+  width: 500px;
+}
 
 .contenedorFormulario {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh; }
+  height: 100vh;
+}
 
 .barraIzq {
   height: 100%;
@@ -23,28 +25,33 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around; }
+  justify-content: space-around;
+}
 
 .blanco {
   color: white;
-  font-size: 25px; }
+  font-size: 25px;
+}
 
 .contenedorDashboard {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh; }
+  height: 100vh;
+}
 
 .imgPerfil {
-  height: 100px; }
+  height: 100px;
+}
 
 .contenedorCalendario {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+}
 
 .divCalendario {
   width: 100%;
@@ -52,59 +59,96 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 200px; }
+  padding: 200px;
+}
 
 .calendar {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+}
 
 .contenedorBitacoras {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh; }
+  height: 100vh;
+}
+
+.btnEntrega {
+  border: 1px solid black;
+}
 
 .contenedorEvaluaciones {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh; }
+  height: 100vh;
+}
 
 .contenedorDocumentos {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh; }
+  height: 100vh;
+}
 
 .contenedorInformacion {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh; }
+  height: 100vh;
+}
 
 .contenedorAdministrar {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+}
 
 .contenedorPanel {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+}
 
 .divDatosLudi {
-  display: none; }
+  display: none;
+}
 
 .contenedorConfiguracion {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
   width: 100%;
-  height: 100vh; }
+  height: 100%;
+  margin-top: 10%;
+}
+
+.panelConfiguracion {
+  width: 85%;
+  height: 100%;
+  margin-right: 25px;
+}
+
+.list-group-flush {
+  cursor: pointer;
+}
+
+.divEditar {
+  display: block;
+}
+
+.divCambiar {
+  display: none;
+}
+
+.divNotificacion {
+  display: none;
+}
 
 /*# sourceMappingURL=app.css.map */

@@ -61,27 +61,32 @@
 
 				case '3':
 				//Nueva publicación
-				include('controladores/controlador. .php');
+				include('controladores/controlador.bitacoras.php');
 				break;
 
 				case '4':
 				//Publicación
-				include('controladores/controlador. .php');
+				include('controladores/controlador.evaluaciones.php');
 				break;
 
 				case '5':
 				//Buscador
-				include('controladores/controlador. .php');
+				include('controladores/controlador.documentos.php');
 				break;
 
 				case '6':
 				//Panel de publicaciones
-				include('controladores/controlador. .php');
+				include('controladores/controlador.informacion.php');
 				break;
 
 				case '7':
 				//Administrar
 				include('controladores/controlador.administrar.php');
+				break;
+
+				case '8':
+				//Configuracion
+				include('controladores/controlador.configuracion.php');
 				break;
 
 				case 'default':
