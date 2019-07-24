@@ -5,7 +5,7 @@
 
         //Verificar conexion
         if($conexion->connect_errno) {
-            $conexion = new mysqli("localhost", "root", "Bambucha_24", "ludibd");
+            $conexion = new mysqli("localhost", "root", "Bambucha_24", "ludios");
             if($conexion->connect_errno)
                 echo "No se conecto a la base de datos";
         }

@@ -6,7 +6,7 @@
     
     //Verificar conexion
     if($conexion->connect_errno) {
-        $conexion = new mysqli("localhost", "root", "Bambucha_24", "ludibd");
+        $conexion = new mysqli("localhost", "root", "Bambucha_24", "ludios");
         if($conexion->connect_errno)
             $salida = "0";
     }
@@ -69,12 +69,11 @@
         $correo = $conexion->real_escape_string($correo);
         $username = $conexion->real_escape_string($username);
         $password = $conexion->real_escape_string($password);
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+
         //Insertar en la tabla persona
         $conexion->query("insert into persona (nombre, nickname, idCarrera, semestre, correo, telefono) select \"$nombre\", \"$nickname\", carrera.idCarrera, $semestre, \"$correo\", \"$telefono\" from carrera, facultad, universidad where carrera.idFacultad = facultad.idFacultad and facultad.idUniversidad = universidad.idUniversidad and facultad.nombre like \"$facultad\" and universidad.nombre like\"$universidad\";");
         //Insertar en la tabla usuario
-        $conexion->query("insert into usuario (username, passwd, idPersona) select \"$username\", md5(\"password\"), idPersona from persona where correo like \"$correo\";");
+        $conexion->query("insert into usuario (username, passwd, idPersona) select \"$username\", md5(\"$password\"), idPersona from persona where correo like \"$correo\";");
         
         if(isset($_POST["comision"])) { //Si la comision esta definida entonces es un Ludi
             $comision = $_POST["comision"];
