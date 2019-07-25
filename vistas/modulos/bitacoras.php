@@ -1,69 +1,66 @@
 <div class="contenedorBitacoras">
   <div class="elegir">
-  <button class="btn btn-primary">Subir Bitácora</button>
-  <button class="btn btn-primary">Evaluar Bitácora</button>
+    <button class="btn btn-primary" onclick="btnSubirBitacora()">Subir Bitácora</button>
+    <button class="btn btn-primary" onclick="btnEvaluarBitacora()">Evaluar Bitácora</button>
   </div>
 
-  <div class="dropzone">
-  <input class="" type="file">
-  <button class="btn btn-primary">Subir Bitácora</button>
+  <div class="card border-primary dropzone">
+    <h1 class="card-title bg-primary text-center text-white" id="bitacorasSemana">Semana</h1>
+    <form class="card-body" id="formArchivo" enctype="multipart/form-data"id="formularioBitacora">
+      <div class="form-group"><input class="form-control" type="file" id="bitacora"></div>
+      <div class="form-group text-center"><button class="btn btn-success" id="btnSubir">Subir Bitácora</button></div>
+    </form>
   </div>
 
   <div class="historial">
-  <h1>Historial</h1>
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Semana</th>
-      <th scope="col">Ludi</th>
-      <th scope="col">Fecha</th>
-      <th scope="col">Link</th>
-      <th scope="col">Evaluación</th>
-      <th scope="col">Comentarios</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Alberto Algohehe</td>
-      <td>12/05/2019</td>
-      <td><a href="#">Ver Bitácora</a></td>
-      <td>Entregado</td>
-      <td><button class="btn btn-primary" data-toggle="modal" data-target="#verComentarios">Ver Comentarios</button></div></td>
-    </tr>
-   
-  </tbody>
-</table>
-  
+    <h1>Historial</h1>
+    <table class="table" id="historial">
+      <thead>
+        <tr>
+          <th scope="col">Semana</th>
+          <th scope="col">Archivo</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Link</th>
+          <th scope="col">Evaluación</th>
+          <th scope="col">Comentarios</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Alberto Algohehe</td>
+          <td>12/05/2019</td>
+          <td><a href="#">Ver Bitácora</a></td>
+          <td>Entregado</td>
+          <td><button class="btn btn-primary" data-toggle="modal" data-target="#verComentarios">Ver Comentarios</button></div></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
   <div class="revision">
-  <h1>Revisión</h1>
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Semana</th>
-      <th scope="col">Ludi</th>
-      <th scope="col">Fecha</th>
-      <th scope="col">Link</th>
-      <th scope="col">Evaluar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Alberto Algohehe</td>
-      <td>12/05/2019</td>
-      <td><a href="#" >Ver Bitácora</a></td>
-      <td>
-      <button class="btn btn-primary" data-toggle="modal" data-target="#evaluar">Evaluar</button></td>
-    </tr>
-   
-  </tbody>
-</table>
+    <h1>Revisión</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Semana</th>
+          <th scope="col">Ludi</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Link</th>
+          <th scope="col">Evaluar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Alberto Algohehe</td>
+          <td>12/05/2019</td>
+          <td><a href="#" >Ver Bitácora</a></td>
+          <td>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#evaluar">Evaluar</button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
-
 </div>
 
 <!-- Modal Comentarios-->

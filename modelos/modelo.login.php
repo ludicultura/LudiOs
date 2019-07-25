@@ -28,7 +28,7 @@
                 $_SESSION["sessionNickname"] = $RUsuario["nickname"];
                 $_SESSION["sessionCarrera"] = $RUsuario["carrera"];
 
-                $QLudi = $conexion->query("select tipo.nombre as tipo, comision.nombre as comision from ludi, persona, tipo, ludi_tipo, comision where idPersona = ".$_SESSION["sessionIdPersona"]." = ludi.idLudi = ludi_tipo.idLudi and ludi_tipo.idTipo = tipo.idTipo and ludi.idComision = comision.idComision;");     //Verificar si la persona es un ludi
+                $QLudi = $conexion->query("select tipo.nombre as tipo, comision.nombre as comision from ludi_tipo, tipo, comision, ludi where ludi_tipo.idLudi = ".$_SESSION["sessionIdPersona"]." and ludi.idLudi = ludi_tipo.idLudi and tipo.idTipo = ludi_tipo.idTipo and comision.idComision = ludi.idComision;");     //Verificar si la persona es un ludi
                 $tipo = "";
                 while($RLudi = $QLudi->fetch_assoc()) {
                     $tipo = $tipo.$RLudi["tipo"]." - ";
