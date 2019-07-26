@@ -7,7 +7,7 @@
   <div class="card border-primary subir-bitacora">
     <h1 class="card-title bg-primary text-center text-white" id="bitacorasSemana">Semana</h1>
     <div class="card-body">
-      <div class="dropzone">
+      <div class="dropzone" id="mydropzone">
         <div class="form-group fallback">
           <input type="file" name="bitacora" id="bitacora" class="form-control" multiple>
         </div>
@@ -24,7 +24,6 @@
           <th scope="col">Semana</th>
           <th scope="col">Archivo</th>
           <th scope="col">Fecha</th>
-          <th scope="col">Link</th>
           <th scope="col">Evaluación</th>
           <th scope="col">Comentarios</th>
         </tr>

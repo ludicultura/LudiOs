@@ -6,11 +6,11 @@
     session_start();
 
     //Conectar con la base de datos
-    $conexion = new mysqli("opalo.studio", "opalostu_user", ".Pinshicontra", "opalostu_LudiOs");
-    
+    $conexion = new mysqli("localhost", "root", "Bambucha_24", "ludios");
+
     //Verificar conexion
     if($conexion->connect_errno) {
-        $conexion = new mysqli("localhost", "root", "Bambucha_24", "ludios");
+        $conexion = new mysqli("opalo.studio", "opalostu_user", ".Pinshicontra", "opalostu_LudiOs");
         if($conexion->connect_errno)
             $salida = "0";
     }
@@ -29,14 +29,8 @@
         else 
             $salida = "\"La semana no coincide\"";
     } else if(isset($_FILES["bitacora"])) {
-        //Claves de acceso para dropbox
-        $dropboxKey = "x0hjlc8omqoghyv";
-        $dropboxSecret = "ueasvywpqht16di";
-        $dropboxToken = "kGLT-Hb6_bAAAAAAAAAACz9nBVUu7TlINdiXXbS5IsdkFpOpm3MbW4VbDjt37hF0";
-
-        //Conexion a Dropbox
-        $app = new DropboxApp($dropboxKey, $dropboxSecret, $dropboxToken);
-        $dropbox = new Dropbox($app);
+        //Conectar con Dropbox
+        $dropbox = getDropbox();
 
         //Configurar el archivo
         $nombre = $_FILES["bitacora"]["name"];
@@ -44,11 +38,11 @@
         $ext = explode(".", $nombre);
         $nombre = current($ext);
         $ext = end($ext);
-        $nombreDropbox = "/".$_POST["periodo"]."/".$_SESSION["sessionNombre"]."/".$nombre.".".$ext;
+        $rutaDropbox = "/".$_POST["periodo"]."/".$_SESSION["sessionNombre"]."/".$nombre.".".$ext;
 
         //Guardar el archivo
         try {
-            $dropbox->upload($tempfile, $nombreDropbox, ["autorename" => true]);  //Subir el archivo
+            $dropbox->upload($tempfile, $rutaDropbox, ["autorename" => true]);  //Subir el archivo
 
             //Guardar en la base de datos
             $Query = $conexion->query("insert into bitacora (idLudi, idSemana, nombre, fecha_entregado) values (".$_SESSION["sessionIdPersona"].",".$_POST["idSemana"].",\"".$nombre.".".$ext."\",\"".$_POST["semana"]."\");");
@@ -58,9 +52,17 @@
             $salida = "No se pudo subir la bitácora";
         }
     } else if($_POST["historial"]) {
-        $Query = $conexion->query("select bitacora.nombre, bitacora.fecha_entregado, semana.num_semana from bitacora, semana where bitacora.idLudi = ".$_SESSION["sessionIdPersona"]." and bitacora.idSemana = semana.idSemana;");
+        $Query = $conexion->query("select bitacora.nombre, bitacora.fecha_entregado, bitacora.aceptada, semana.num_semana from bitacora, semana where bitacora.idLudi = ".$_SESSION["sessionIdPersona"]." and bitacora.idSemana = semana.idSemana;");
         while($Result = $Query->fetch_assoc())
-            $salida = $salida.$Result["nombre"].",".$Result["fecha_entregado"].",".$Result["num_semana"].";";
+            $salida = $salida.$Result["nombre"].",".$Result["fecha_entregado"].",".$Result["num_semana"].",".$Result["aceptada"].";";
+    } else if($_POST["archivo"]) {
+        $dropbox = getDropbox();
+        $rutaDropbox = "/".$_POST["periodo"]."/".$_SESSION["sessionNombre"]."/".$_POST["archivo"];
+
+        //Obtener el link
+        $temporaryLink = $dropbox->getTemporaryLink($rutaDropbox);
+
+        $salida = $temporaryLink->getLink(); //Obtener el link como cadena
     }
 
     //if(isset($Query)) 
@@ -68,4 +70,17 @@
     $conexion->close();
 
     echo $salida;
+
+    function getDropbox() {
+        //Claves de acceso para dropbox
+        $dropboxKey = "x0hjlc8omqoghyv";
+        $dropboxSecret = "ueasvywpqht16di";
+        $dropboxToken = "kGLT-Hb6_bAAAAAAAAAACz9nBVUu7TlINdiXXbS5IsdkFpOpm3MbW4VbDjt37hF0";
+
+        //Conexion a Dropbox
+        $app = new DropboxApp($dropboxKey, $dropboxSecret, $dropboxToken);
+        $dropbox = new Dropbox($app);
+
+        return $dropbox;
+    }
  ?>

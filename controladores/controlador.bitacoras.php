@@ -2,8 +2,12 @@
     Dropzone.autoDiscover = false;
     
     $(document).ready(function() {
+        Dropzone.options.mydropzone = {
+            maxFilesize: 30, // MB
+        };
+
         var dropzone = new Dropzone("div.dropzone", {url: "modelos/modelo.bitacoras.php"});  //Objeto de dropzone
-        
+
         $(".historial").css("display", "none");
         $(".revision").css("display", "none");
         $(".subir-bitacora").css("display", "none");
@@ -55,8 +59,8 @@
                 var datos = Array();
                 for(var i = 0; i < bitacora.length - 1; i++) {
                     datos = bitacora[i].split(",");
-                    //$("#historial").append("<tr><td>1</td><td></td><td></td><td></td><td></td><td></td></tr>");
-                    $("#historial").append("<tr><td>" + datos[2] + "</td><td>" + datos[0] + "</td><td>" + datos[1] + "</td><td>" + "1" + "</td><td>" + "1" + "</td><td>" + "<button class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#verComentarios\">Ver Comentarios</button>" + "</td></tr>");
+                    datos[3] = (datos[3] == "") ? "No rebisada" : datos[3];
+                    $("#historial").append("<tr><td>" + datos[2] + "</td><td><a href=\"#\" onclick=\"abrirArchivo(this.text, '" + periodo + "')\">" + datos[0] + "</a></td><td>" + datos[1] + "</td><td>" + datos[3] + "</td><td>" + "<button class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#verComentarios\">Ver Comentarios</button>" + "</td></tr>");
                 }
             }
         });
@@ -112,5 +116,18 @@
                 valorEntregado = false;
                 break;
         }
+    }
+
+    //Funcion abrir archivo
+    function abrirArchivo(text, periodo) {
+        var datos = "archivo=" + text + "&periodo=" + periodo;
+        $.ajax({
+            type: "post",
+            url: "modelos/modelo.bitacoras.php",
+            data: datos,
+            success: function(response) {
+                window.location = response;
+            }
+        });        
     }
 </script>

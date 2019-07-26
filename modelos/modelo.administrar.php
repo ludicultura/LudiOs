@@ -2,11 +2,11 @@
     session_start();
 
     //Conectar con la base de datos
-    $conexion = new mysqli("opalo.studio", "opalostu_user", ".Pinshicontra", "opalostu_LudiOs");
+    $conexion = new mysqli("localhost", "root", "Bambucha_24", "ludios");
     
     //Verificar conexion
     if($conexion->connect_errno) {
-        $conexion = new mysqli("localhost", "root", "Bambucha_24", "ludios");
+        $conexion = new mysqli("opalo.studio", "opalostu_user", ".Pinshicontra", "opalostu_LudiOs");
         if($conexion->connect_errno)
             $salida = "0";
     }

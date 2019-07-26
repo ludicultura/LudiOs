@@ -1,11 +1,11 @@
 <?php
     if(isset($_POST["loginEmail"]) && isset($_POST["loginPassword"])) { //Verifica si el username y el password fueron ingresados
         //Conectar a la base de datos
-        $conexion = new mysqli("opalo.studio", "opalostu_user", ".Pinshicontra", "opalostu_LudiOs");
+        $conexion = new mysqli("localhost", "root", "Bambucha_24", "ludios");
 
         //Verificar conexion
         if($conexion->connect_errno) {
-            $conexion = new mysqli("localhost", "root", "Bambucha_24", "ludios");
+            $conexion = new mysqli("opalo.studio", "opalostu_user", ".Pinshicontra", "opalostu_LudiOs");
             if($conexion->connect_errno)
                 echo "No se conecto a la base de datos";
         }
