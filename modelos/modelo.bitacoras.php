@@ -4,7 +4,7 @@
     use Kunnu\Dropbox\DropboxApp;
 
     session_start();
-    
+
     //Conectar con la base de datos
     $conexion = new mysqli("opalo.studio", "opalostu_user", ".Pinshicontra", "opalostu_LudiOs");
     
@@ -63,9 +63,9 @@
             $salida = $salida.$Result["nombre"].",".$Result["fecha_entregado"].",".$Result["num_semana"].";";
     }
 
+    //if(isset($Query)) 
+        //$Query->close();
     $conexion->close();
-    if(isset($Query)) 
-        $Query->close();
 
     echo $salida;
  ?>

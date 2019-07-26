@@ -1,8 +1,12 @@
 <script>
+    Dropzone.autoDiscover = false;
+    
     $(document).ready(function() {
+        var dropzone = new Dropzone("div.dropzone", {url: "modelos/modelo.bitacoras.php"});  //Objeto de dropzone
+        
         $(".historial").css("display", "none");
         $(".revision").css("display", "none");
-        $(".dropzone").css("display", "none");
+        $(".subir-bitacora").css("display", "none");
         $(".elegir").css("display", "none");
 
         //Verificar si hay una cuenta y si la cuenta es de talento o no
@@ -17,7 +21,7 @@
                     $(".elegir").css("display", "block");
                 else {
                     $(".historial").css("display", "block");
-                    $(".dropzone").css("display", "block");
+                    $(".subir-bitacora").css("display", "block");
                 }
             }
         });
@@ -51,7 +55,8 @@
                 var datos = Array();
                 for(var i = 0; i < bitacora.length - 1; i++) {
                     datos = bitacora[i].split(",");
-                    $("#historal").append("<tr><td>" + datos[2] + "</td><td>" + datos[1] + "</td><td>" + datos[0] + "</td><td>" + 1 + "</td><td>" + "<td><button class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#verComentarios\">Ver Comentarios</button></div></td>" + "</td></tr>");
+                    //$("#historial").append("<tr><td>1</td><td></td><td></td><td></td><td></td><td></td></tr>");
+                    $("#historial").append("<tr><td>" + datos[2] + "</td><td>" + datos[0] + "</td><td>" + datos[1] + "</td><td>" + "1" + "</td><td>" + "1" + "</td><td>" + "<button class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#verComentarios\">Ver Comentarios</button>" + "</td></tr>");
                 }
             }
         });
@@ -60,13 +65,14 @@
         $("#btnSubir").click(function (e) {
             e.preventDefault();
 
-            if($("#bitacora").val() != "") {
+            //Si hay una bitacora cargada en el dropzone
+            if(dropzone.getAcceptedFiles().length > 0) {
                 var datos = new FormData();
-                datos.append("bitacora", $("#bitacora")[0].files[0]);
+                datos.append("bitacora", dropzone.getAcceptedFiles()[0]);
                 datos.append("periodo", periodo);
                 datos.append("idSemana", idSemana);
                 datos.append("semana", fecha_actual.getFullYear() + "-" + (fecha_actual.getMonth() + 1) + "-" + fecha_actual.getDate());
-                
+
                 $.ajax({
                     type: "POST",
                     url: "modelos/modelo.bitacoras.php",
@@ -83,7 +89,7 @@
 
     function btnSubirBitacora() {
         $(".historial").css("display", "block");
-        $(".dropzone").css("display", "block");
+        $(".subir-bitacora").css("display", "block");
         $(".elegir").css("display", "none");
     }
 

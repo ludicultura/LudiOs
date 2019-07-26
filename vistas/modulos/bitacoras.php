@@ -3,18 +3,22 @@
     <button class="btn btn-primary" onclick="btnSubirBitacora()">Subir Bitácora</button>
     <button class="btn btn-primary" onclick="btnEvaluarBitacora()">Evaluar Bitácora</button>
   </div>
-
-  <div class="card border-primary dropzone">
+  
+  <div class="card border-primary subir-bitacora">
     <h1 class="card-title bg-primary text-center text-white" id="bitacorasSemana">Semana</h1>
-    <form class="card-body" id="formArchivo" enctype="multipart/form-data"id="formularioBitacora">
-      <div class="form-group"><input class="form-control" type="file" id="bitacora"></div>
-      <div class="form-group text-center"><button class="btn btn-success" id="btnSubir">Subir Bitácora</button></div>
-    </form>
+    <div class="card-body">
+      <div class="dropzone">
+        <div class="form-group fallback">
+          <input type="file" name="bitacora" id="bitacora" class="form-control" multiple>
+        </div>
+      </div>
+      <div class="form-group text-center mt-4"><button class="btn btn-success" id="btnSubir">Subir Bitácora</button></div>
+    </div>
   </div>
 
   <div class="historial">
     <h1>Historial</h1>
-    <table class="table" id="historial">
+    <table class="table">
       <thead>
         <tr>
           <th scope="col">Semana</th>
@@ -25,15 +29,7 @@
           <th scope="col">Comentarios</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Alberto Algohehe</td>
-          <td>12/05/2019</td>
-          <td><a href="#">Ver Bitácora</a></td>
-          <td>Entregado</td>
-          <td><button class="btn btn-primary" data-toggle="modal" data-target="#verComentarios">Ver Comentarios</button></div></td>
-        </tr>
+      <tbody id="historial">
       </tbody>
     </table>
   </div>
