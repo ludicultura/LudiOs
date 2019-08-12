@@ -2,7 +2,8 @@
     require_once "../vistas/js/dropbox/vendor/autoload.php";   //Agregar dropbox-SDK
     use Kunnu\Dropbox\Dropbox;
     use Kunnu\Dropbox\DropboxApp;
-
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
     session_start();
 
     //Conectar con la base de datos
@@ -51,11 +52,11 @@
         } catch(exception $e) {
             $salida = "No se pudo subir la bitácora";
         }
-    } else if($_POST["historial"]) {
+    } else if(isset($_POST["historial"])) {
         $Query = $conexion->query("select bitacora.nombre, bitacora.fecha_entregado, bitacora.aceptada, semana.num_semana from bitacora, semana where bitacora.idLudi = ".$_SESSION["sessionIdPersona"]." and bitacora.idSemana = semana.idSemana;");
         while($Result = $Query->fetch_assoc())
             $salida = $salida.$Result["nombre"].",".$Result["fecha_entregado"].",".$Result["num_semana"].",".$Result["aceptada"].";";
-    } else if($_POST["archivo"]) {
+    } else if(isset($_POST["archivo"])) {
         $dropbox = getDropbox();
         $rutaDropbox = "/".$_POST["periodo"]."/".$_SESSION["sessionNombre"]."/".$_POST["archivo"];
 

@@ -2,6 +2,7 @@
     Dropzone.autoDiscover = false;
     
     $(document).ready(function() {
+        //Opciones del dropzone
         Dropzone.options.mydropzone = {
             maxFilesize: 30, // MB
         };
@@ -125,7 +126,7 @@
             type: "post",
             url: "modelos/modelo.bitacoras.php",
             data: datos,
-            success: function(response) {
+            success: function(response) {alert(response);
                 window.location = response;
             }
         });        
