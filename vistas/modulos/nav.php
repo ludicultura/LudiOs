@@ -1,4 +1,4 @@
-<nav class="nav  barraIzq">
+<nav class="nav barraIzq">
 <a class="nav-link active" href="#"></a>
   <a class="nav-link active" href="?page=1">Dashboard</a>
   <a class="nav-link" href="?page=2">Calendario</a>

@@ -1,20 +1,20 @@
 <div class="contenedorFormulario">
   <form class="formularioLogin" action="" method="post">
     <div class="form-group">
-      <label for="exampleInputEmail1">Email</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="loginEmail">
+      <label for="loginEmail">Email</label>
+      <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" placeholder="Enter email">
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="loginPassword">
+      <label for="loginPassword">Password</label>
+      <input type="password" class="form-control" id="loginPassword" placeholder="Password">
     </div>
     <div class="form-group form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" id="btnLogin">Submit</button>
     <a href="?page=1" class="btn btn-primary">ir a Formulario</a>
   </form>
-  <script> displayError("<?php echo $error; ?>"); </script>
+  <div id="loginDivErrors" class="alert alert-danger" role="alert"><a href="#">[X]</a><ul id="loginErrors"></ul></div>
 </div>

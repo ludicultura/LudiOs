@@ -38,20 +38,22 @@
 	<script src='vistas/js/fullcalendar/daygrid/main.min.js'></script>
 	<script src='vistas/js/fullcalendar/timegrid/main.min.js'></script>
 	
+	<!-- Dropzone -->
+	<link href="vistas/css/dropzone/dropzone.min.css" rel='stylesheet' />
+	<script src="vistas/js/dropzone/dropzone.min.js"></script>
+
     <?php	
 		//Los controladores que se utilizan en todas las páginas, se incluyen fuera del if de abajo.
-		if(isset($_GET['id'])){
+		if(isset($_GET['id'])) {
 			
-		}
-		elseif(isset($_GET['page'])){//Esta variable verifica que exista un id para la página visitada,
+		} elseif(isset($_GET['page'])) {//Esta variable verifica que exista un id para la página visitada,
 							//si no existe, es porque está en el index, entonces lo del index se incluye
 							//en el else en el orden que deben aparecer las closas
 
-			switch($_GET['page']){
+			switch($_GET['page']) {
 
 				case '1':
 				//Dashboard
-				include('modelos/modelo.dashboard.php');
 				include('controladores/controlador.dashboard.php');
 				break;
 
@@ -98,11 +100,9 @@
 		}
 		else{
 			//Aquí se incluyen todos los controladores del index.
-
 			include('controladores/controlador.login.php');
 		}
 
-		
 		include('controladores/controlador.navbar.php');
 		include('controladores/controlador.nav.php');
 	?>
@@ -113,7 +113,7 @@
 		if(isset($_GET['id'])) {
 
 		} elseif(isset($_GET['page'])) {
-			switch($_GET['page']){
+			switch($_GET['page']) {
 
 				case '1':
 				//vista del dashboard
@@ -164,7 +164,6 @@
 		include('vistas/modulos/navbar.php');
 		include('vistas/modulos/nav.php');
 	 ?>
-
 </body>
 
 </html>
